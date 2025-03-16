@@ -4,10 +4,10 @@ This repository contains the code and resources for a project focused on detecti
 
 ## Table of Contents
 
-- [About the Project](##about-the-project)
-- [Dataset](##dataset)
-- [Dependencies](##dependencies)
-- [Installation](##installation)
+- [About the Project](#about-the-project)
+- [Dataset](#dataset)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Model Architecture](#model-architecture)
 - [Preprocessing](#preprocessing)
@@ -87,6 +87,8 @@ Bash
 5. Evaluation: The evaluation metrics and confusion matrices are displayed after each model training.
 
 ## Model Architecture
+![image](https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683)
+
 1. BERT Model: Uses the bert-base-uncased pre-trained model for sequence classification.
 2. CNN Model: A convolutional neural network model with embedding, convolutional, and dense layers.
 3. OnSIDe-Bert-CNN Model: A hybrid model combining BERT embeddings with CNN layers for feature extraction and classification.
