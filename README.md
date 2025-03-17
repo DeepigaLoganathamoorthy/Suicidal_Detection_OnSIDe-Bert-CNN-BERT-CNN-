@@ -107,8 +107,8 @@ cd Suicidal_Detection_OnSIDe-Bert-CNN-BERT-CNN-
     * Models are evaluated using accuracy, precision, recall, F1-score, and confusion matrices.
 
 ## Model Architecture
-![image](https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683)
-
+      ![image](https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683)
+      <img src="https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683" width="400">
 1. BERT Model: Uses the bert-base-uncased pre-trained model for sequence classification.
 2. CNN Model: A convolutional neural network model with embedding, convolutional, and dense layers.
 3. OnSIDe-Bert-CNN Model: A hybrid model combining BERT embeddings with CNN layers for feature extraction and classification.
@@ -143,7 +143,7 @@ The EDA includes:
 2. VADER Analysis: Analyzes the text for positive, neutral, and negative sentiment scores.
 
 ![image](https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80)
-<img src="https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80" width="200">
+<img src="https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80" width="300">
 
 ## Model Training
 1. BERT Model: Fine-tuned the pre-trained BERT model using the training data.
