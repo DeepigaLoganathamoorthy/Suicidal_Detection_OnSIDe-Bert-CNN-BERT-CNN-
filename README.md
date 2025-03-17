@@ -107,13 +107,13 @@ cd Suicidal_Detection_OnSIDe-Bert-CNN-BERT-CNN-
     * Models are evaluated using accuracy, precision, recall, F1-score, and confusion matrices.
 
 ## Model Architecture
-![image](https://github.com/user-attachments/assets/96eb3257-9499-4f5d-a317-5fee8ad132b4)
+![image](https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683)
 
 1. BERT Model: Uses the bert-base-uncased pre-trained model for sequence classification.
 2. CNN Model: A convolutional neural network model with embedding, convolutional, and dense layers.
 3. OnSIDe-Bert-CNN Model: A hybrid model combining BERT embeddings with CNN layers for feature extraction and classification.
+![image](https://github.com/user-attachments/assets/96eb3257-9499-4f5d-a317-5fee8ad132b4)
 
-![image](https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683)
 
 ## Preprocessing
 The preprocessing steps include:
@@ -163,8 +163,7 @@ e) Confusion matrices
    
 ![image](https://github.com/user-attachments/assets/dbc8e8f8-62b9-4fb4-aeef-73be4ef44a04)
 
-3. The final model performance for Twitter dataset shows as below :
-### The OnSIDe-Bert-CNN model is expected to achieve high accuracy in detecting suicidal ideation.
+3. The final model performance for Twitter dataset shows as below. The OnSIDe-Bert-CNN model is expected to achieve high accuracy in detecting suicidal ideation.
 ![image](https://github.com/user-attachments/assets/f4c7d0fa-11e1-4ccc-ac53-e25a07097ded)
 
 ## Contributing
