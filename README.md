@@ -113,6 +113,7 @@ cd Suicidal_Detection_OnSIDe-Bert-CNN-BERT-CNN-
 1. BERT Model: Uses the bert-base-uncased pre-trained model for sequence classification.
 2. CNN Model: A convolutional neural network model with embedding, convolutional, and dense layers.
 3. OnSIDe-Bert-CNN Model: A hybrid model combining BERT embeddings with CNN layers for feature extraction and classification.
+
 ![image](https://github.com/user-attachments/assets/96eb3257-9499-4f5d-a317-5fee8ad132b4)
 
 
@@ -143,7 +144,6 @@ The EDA includes:
 1. Empath Analysis: Analyzes the text for categories like sadness, anger, and fear.
 2. VADER Analysis: Analyzes the text for positive, neutral, and negative sentiment scores.
 
-![image](https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80)
 <img src="https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80" width="400">
 
 ## Model Training
@@ -162,12 +162,10 @@ d) F1-score
 1. The evaluation results are displayed after each model training.
 2. The below table shows the model's performance trained and tested from Reddit dataset.
    
-![image](https://github.com/user-attachments/assets/dbc8e8f8-62b9-4fb4-aeef-73be4ef44a04)
 <img src="https://github.com/user-attachments/assets/dbc8e8f8-62b9-4fb4-aeef-73be4ef44a04" width="400">
 
 3. The final model performance for Twitter dataset shows as below. The OnSIDe-Bert-CNN model is expected to achieve high accuracy in detecting suicidal ideation.
 
-![image](https://github.com/user-attachments/assets/f4c7d0fa-11e1-4ccc-ac53-e25a07097ded)
 <img src="https://github.com/user-attachments/assets/f4c7d0fa-11e1-4ccc-ac53-e25a07097ded" width="400">
 
 ## Contributing
