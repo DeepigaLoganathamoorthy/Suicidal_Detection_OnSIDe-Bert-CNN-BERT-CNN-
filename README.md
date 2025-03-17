@@ -24,8 +24,10 @@ This repository contains the code and resources for a project focused on detecti
 This project aims to develop an effective and robust model for detecting suicidal ideation in text data. The model utilizes a hybrid architecture, OnSIDe-Bert-CNN, which leverages the strengths of both BERT and CNNs to achieve high accuracy in sentiment classification. This project is intended for research and educational purposes, specifically in the field of AI Applications.
 
 ## Dataset
-
-The dataset used in this project is `suicide_detection.csv`, which contains text data labeled as either "suicide" or "non-suicide." The dataset is located in the `data/` directory.
+We used two datasets :
+1. The model was trained, validated, and tested using a Reddit dataset, scrapped from two subreddits (i.e., SuicideWatch and teenagers), `(https://www.kaggle.com/datasets/nikhileswarkomati/suicide-watch
+)`.
+2. The final model was tested on a new unseen dataset, a Twitter dataset `(https://github.com/laxmimerit/twitter-suicidal-intention-dataset)`.
 
 ## Dependencies
 
@@ -52,6 +54,7 @@ To run this project, you will need the following Python libraries:
 - scikit-learn
 - tensorflow
 - keras
+- spacy
 
 You can install these dependencies using pip:
 
@@ -87,11 +90,12 @@ Bash
 5. Evaluation: The evaluation metrics and confusion matrices are displayed after each model training.
 
 ## Model Architecture
-![image](https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683)
+![image](https://github.com/user-attachments/assets/96eb3257-9499-4f5d-a317-5fee8ad132b4)
 
 1. BERT Model: Uses the bert-base-uncased pre-trained model for sequence classification.
 2. CNN Model: A convolutional neural network model with embedding, convolutional, and dense layers.
 3. OnSIDe-Bert-CNN Model: A hybrid model combining BERT embeddings with CNN layers for feature extraction and classification.
+![image](https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683)
 
 ## Preprocessing
 The preprocessing steps include:
@@ -110,12 +114,14 @@ k) Spelling correction
 ## Exploratory Data Analysis (EDA)
 The EDA includes:
 1. Word count distribution for suicidal and non-suicidal texts
-2. Top bi-grams for suicidal and non-suicidal texts
-3. Text length distribution
+![image](https://github.com/user-attachments/assets/ead8771c-b661-46d5-8130-aeb3245f663c)
+3. Top bi-grams for suicidal and non-suicidal texts
+4. Text length distribution
 
 ## Sentiment Analysis
 1. Empath Analysis: Analyzes the text for categories like sadness, anger, and fear.
 2. VADER Analysis: Analyzes the text for positive, neutral, and negative sentiment scores.
+![image](https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80)
 
 ## Model Training
 1. BERT Model: Fine-tuned the pre-trained BERT model using the training data.
@@ -133,6 +139,7 @@ f) Classification reports
 
 ## Results
 The evaluation results are displayed after each model training. The OnSIDe-Bert-CNN model is expected to achieve high accuracy in detecting suicidal ideation.
+![image](https://github.com/user-attachments/assets/f4c7d0fa-11e1-4ccc-ac53-e25a07097ded)
 
 ## Contributing
 Contributions are welcome! Please feel free to submit pull requests or open issues to improve this project.
