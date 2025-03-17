@@ -143,6 +143,7 @@ The EDA includes:
 2. VADER Analysis: Analyzes the text for positive, neutral, and negative sentiment scores.
 
 ![image](https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80)
+<img src="https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80" width="200">
 
 ## Model Training
 1. BERT Model: Fine-tuned the pre-trained BERT model using the training data.
@@ -155,7 +156,6 @@ a) Accuracy
 b) Precision
 c) Recall
 d) F1-score
-e) Confusion matrices
 
 ## Results
 1. The evaluation results are displayed after each model training.
@@ -164,6 +164,7 @@ e) Confusion matrices
 ![image](https://github.com/user-attachments/assets/dbc8e8f8-62b9-4fb4-aeef-73be4ef44a04)
 
 3. The final model performance for Twitter dataset shows as below. The OnSIDe-Bert-CNN model is expected to achieve high accuracy in detecting suicidal ideation.
+
 ![image](https://github.com/user-attachments/assets/f4c7d0fa-11e1-4ccc-ac53-e25a07097ded)
 
 ## Contributing
