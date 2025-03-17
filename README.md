@@ -21,43 +21,44 @@ This repository contains the code and resources for a project focused on detecti
 
 ## About the Project
 
-This project aims to develop an effective and robust model for detecting suicidal ideation in text data. The model utilizes a hybrid architecture, OnSIDe-Bert-CNN, which leverages the strengths of both BERT and CNNs to achieve high accuracy in sentiment classification. This project is intended for research and educational purposes, specifically in the field of AI Applications.
+This project aims to develop an effective and robust model for detecting suicidal ideation in text data. The model utilizes a hybrid architecture, OnSIDe-BERT-CNN, leveraging the strengths of both BERT and CNNs to achieve high accuracy in sentiment classification. This project is intended for research and educational purposes, specifically in the field of AI Applications for mental health.
 
-## Dataset
-We used two datasets :
-1. The model was trained, validated, and tested using a Reddit dataset, scrapped from two subreddits (i.e., SuicideWatch and teenagers), `(https://www.kaggle.com/datasets/nikhileswarkomati/suicide-watch
-)`.
-2. The final model was tested on a new unseen dataset, a Twitter dataset `(https://github.com/laxmimerit/twitter-suicidal-intention-dataset)`.
+## Datasets
+
+We used two datasets:
+
+1.  **Reddit Dataset:** Used for training, validation, and testing. Scraped from the SuicideWatch and teenagers subreddits. Available on Kaggle: [Suicide Watch Dataset](https://www.kaggle.com/datasets/nikhileswarkomati/suicide-watch).
+2.  **Twitter Dataset:** Used for final model testing on unseen data. Available on GitHub: [Twitter Suicidal Intention Dataset](https://github.com/laxmimerit/twitter-suicidal-intention-dataset).
 
 ## Dependencies
 
 To run this project, you will need the following Python libraries:
 
-- pandas
-- numpy
-- spacy
-- unidecode
-- contractions
-- re
-- wordninja
-- collections
-- pkg_resources
-- spellchecker
-- symspellpy
-- matplotlib
-- seaborn
-- nltk
-- empath
-- vaderSentiment
-- transformers
-- torch
-- scikit-learn
-- tensorflow
-- keras
-- spacy
+-   `pandas`
+-   `numpy`
+-   `spacy`
+-   `unidecode`
+-   `contractions`
+-   `re`
+-   `wordninja`
+-   `collections`
+-   `pkg_resources`
+-   `spellchecker`
+-   `symspellpy`
+-   `matplotlib`
+-   `seaborn`
+-   `nltk`
+-   `empath`
+-   `vaderSentiment`
+-   `transformers`
+-   `torch`
+-   `scikit-learn`
 
 You can install these dependencies using pip:
 
+```
+pip install pandas numpy spacy unidecode contractions wordninja spellchecker symspellpy matplotlib seaborn nltk empath vaderSentiment transformers torch scikit-learn
+```
 
 ## Installation
 1.Clone the repository:
@@ -67,27 +68,43 @@ cd Suicidal_Detection_OnSIDe-Bert-CNN-BERT-CNN-
 ```
 
 2. Install the required dependencies (see Dependencies).
-3. Ensure the dataset suicide_detection.csv is placed in the data/ folder.
+3. Ensure the dataset downloaded from the source(s) and placed in your data/ folder.
 
 ## Usage
-1. Preprocessing: Run the preprocessing script to clean and prepare the data:
-Bash
-# The cleaning and preprocessing code is located at the top of the python file.
-The cleaned dataset is saved as suicide_final_cleaned.csv.
 
-2. Exploratory Data Analysis (EDA): Run the EDA script to visualize and analyze the data:
-Bash
-# EDA code is included in the python file.
+1.  **Preprocessing:**
+    * Run the preprocessing script to clean and prepare the data.
+    * The cleaning and preprocessing code is located at the top of the python file.
+    * The cleaned dataset is saved as `suicide_final_cleaned.csv`.
 
-3. Sentiment Analysis: Run the sentiment analysis scripts for Empath and VADER analysis:
-Bash
-# Sentiment analysis code is included in the python file.
+2.  **Exploratory Data Analysis (EDA):**
+    * Run the EDA scripts to visualize and analyze the data.
+    * EDA code is included in the python file.
 
-4. Model Training: Run the model training scripts for BERT, CNN, and OnSIDe-Bert-CNN models:
-Bash
-# Model training code for BERT, CNN, and OnSIDe-Bert-CNN is included in the python file.
+3.  **Sentiment Analysis:**
+    * Run the sentiment analysis scripts for Empath and VADER analysis.
+    * Sentiment analysis code is included in the python file.
 
-5. Evaluation: The evaluation metrics and confusion matrices are displayed after each model training.
+4.  **Model Training:**
+    * Run the model training scripts for BERT, CNN, and OnSIDe-BERT-CNN models.
+    * Model training code for BERT, CNN, and (hybrid) OnSIDe-BERT-CNN is included in the python file.
+    * The OnSIDe-BERT-CNN model is implemented as a PyTorch `nn.Module`.
+        * **BERT Embedding:** The `bert-base-uncased` model is used to generate contextualized word embeddings.
+        * **CNN Layers:** Multiple 2D convolutional layers with varying filter sizes (`[3, 4, 5]`) are applied to the BERT embeddings. ReLU activation and max-pooling are used for feature extraction.
+        * **Fully Connected Layer:** The extracted features are flattened, passed through a dropout layer, and then fed into a fully connected layer with a sigmoid activation function for binary classification.
+    * **Training Process:**
+        * **Initialization:** The model, optimizer (AdamW), and loss function (BCEWithLogitsLoss) are initialized.
+        * **Epochs:** The model is trained for a specified number of epochs (`EPOCHS = 1`).
+        * **Batch Training:** In each epoch, the training data is iterated in batches.
+        * **Forward Pass:** For each batch, the input sequences are passed through the model to obtain predictions.
+        * **Loss Calculation:** The loss between the predicted and actual labels is calculated.
+        * **Backward Pass and Optimization:** The loss is backpropagated, and the model's parameters are updated using the optimizer.
+        * **Loss Tracking:** The average training loss is calculated and printed for each epoch.
+        * **Model Saving:** After training, the trained model's state dictionary is saved to `bert_cnn_model.pth`.
+
+5.  **Evaluation:**
+    * The evaluation metrics and confusion matrices are displayed after each model training.
+    * Models are evaluated using accuracy, precision, recall, F1-score, and confusion matrices.
 
 ## Model Architecture
 ![image](https://github.com/user-attachments/assets/96eb3257-9499-4f5d-a317-5fee8ad132b4)
@@ -95,6 +112,7 @@ Bash
 1. BERT Model: Uses the bert-base-uncased pre-trained model for sequence classification.
 2. CNN Model: A convolutional neural network model with embedding, convolutional, and dense layers.
 3. OnSIDe-Bert-CNN Model: A hybrid model combining BERT embeddings with CNN layers for feature extraction and classification.
+
 ![image](https://github.com/user-attachments/assets/d3b730d5-a909-4c7a-9f2e-6ac1d56ba683)
 
 ## Preprocessing
@@ -113,14 +131,17 @@ k) Spelling correction
 
 ## Exploratory Data Analysis (EDA)
 The EDA includes:
-1. Word count distribution for suicidal and non-suicidal texts
+1. Word count distribution for suicidal and non-suicidal texts.
+
 ![image](https://github.com/user-attachments/assets/ead8771c-b661-46d5-8130-aeb3245f663c)
-3. Top bi-grams for suicidal and non-suicidal texts
-4. Text length distribution
+
+2. Top bi-grams for suicidal and non-suicidal texts
+3. Text length distribution
 
 ## Sentiment Analysis
 1. Empath Analysis: Analyzes the text for categories like sadness, anger, and fear.
 2. VADER Analysis: Analyzes the text for positive, neutral, and negative sentiment scores.
+
 ![image](https://github.com/user-attachments/assets/e28fb16a-1f3f-4297-914c-7b02d6860d80)
 
 ## Model Training
@@ -135,10 +156,15 @@ b) Precision
 c) Recall
 d) F1-score
 e) Confusion matrices
-f) Classification reports
 
 ## Results
-The evaluation results are displayed after each model training. The OnSIDe-Bert-CNN model is expected to achieve high accuracy in detecting suicidal ideation.
+1. The evaluation results are displayed after each model training.
+2. The below table shows the model's performance trained and tested from Reddit dataset.
+   
+![image](https://github.com/user-attachments/assets/dbc8e8f8-62b9-4fb4-aeef-73be4ef44a04)
+
+3. The final model performance for Twitter dataset shows as below :
+### The OnSIDe-Bert-CNN model is expected to achieve high accuracy in detecting suicidal ideation.
 ![image](https://github.com/user-attachments/assets/f4c7d0fa-11e1-4ccc-ac53-e25a07097ded)
 
 ## Contributing
