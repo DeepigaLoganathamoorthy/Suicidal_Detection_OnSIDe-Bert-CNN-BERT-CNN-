@@ -27,3 +27,4 @@ for category, score in suicidal_scores_vader.items():
 print("\nNon-Suicidal Texts VADER Analysis:")
 for category, score in non_suicidal_scores_vader.items():
     print(f'Mean {category} score: {score:.4f}')
+
